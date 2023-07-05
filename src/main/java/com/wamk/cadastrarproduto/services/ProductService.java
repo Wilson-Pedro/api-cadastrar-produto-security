@@ -28,4 +28,13 @@ public class ProductService {
 	public Optional<Product> findById(UUID id) {
 		return productRepository.findById(id);
 	}
+
+	public void update(Product product) {
+		product.setId(product.getId());
+		productRepository.save(product);
+	}
+
+	public void delete(Product product) {
+		productRepository.delete(product);
+	}
 }
