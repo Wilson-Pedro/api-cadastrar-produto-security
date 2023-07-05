@@ -2,10 +2,16 @@ package com.wamk.cadastrarproduto.dto;
 
 import java.io.Serializable;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 public class ProductDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
+	@NotBlank(message = "productName is mandatory")
 	private String productName;
+	
+	@NotNull(message = "value cannot be null")
 	private Double value;
 	
 	public ProductDTO() {
