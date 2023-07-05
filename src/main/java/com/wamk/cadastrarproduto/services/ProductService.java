@@ -1,5 +1,9 @@
 package com.wamk.cadastrarproduto.services;
 
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,5 +19,13 @@ public class ProductService {
 	public Product save(Product product) {
 		product.setId(null);
 		return productRepository.save(product);
+	}
+
+	public List<Product> findAll() {
+		return productRepository.findAll();
+	}
+
+	public Optional<Product> findById(UUID id) {
+		return productRepository.findById(id);
 	}
 }
